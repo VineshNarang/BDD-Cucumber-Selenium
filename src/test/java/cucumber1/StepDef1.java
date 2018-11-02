@@ -37,7 +37,7 @@ public class StepDef1 {
 	@Given("^user launch the application$")
 	public void user_launch_the_application() throws Exception{
 		WebDriver driver = getdriver();
-		driver.get("http://localhost:8080/tdd-app-1.0/");
+		driver.get("http://localhost:8081/tdd-app-1.0/");
 		driver.manage().window().maximize() ;
 		//System.out.println(driver.getTitle().toString());
 		Thread.sleep(3000);
