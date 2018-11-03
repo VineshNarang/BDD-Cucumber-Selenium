@@ -11,10 +11,13 @@ import org.junit.Before;
 import org.junit.After;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,8 +28,15 @@ public class StepDef1 {
 	   
 	@Before
 	public WebDriver getdriver()  {
+		Proxy proxy = new Proxy();
+        proxy.setHttpProxy("localhost:8090");
+        proxy.setFtpProxy("localhost:8090");
+        proxy.setSslProxy("localhost:8090");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(CapabilityType.PROXY, proxy);
+     
 		  if (driver == null) {
-		 driver= new FirefoxDriver();
+		 driver= new FirefoxDriver(capabilities);
 		  }
 		  
 
