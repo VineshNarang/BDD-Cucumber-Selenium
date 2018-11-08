@@ -29,9 +29,9 @@ public class StepDef1 {
 	@Before
 	public WebDriver getdriver()  {
 		Proxy proxy = new Proxy();
-        proxy.setHttpProxy("localhost:8090");
-        proxy.setFtpProxy("localhost:8090");
-        proxy.setSslProxy("localhost:8090");
+        proxy.setHttpProxy("localhost:8092");
+        proxy.setFtpProxy("localhost:8092");
+        proxy.setSslProxy("localhost:8092");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PROXY, proxy);
      

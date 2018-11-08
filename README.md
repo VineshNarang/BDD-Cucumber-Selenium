@@ -1,0 +1,1 @@
+mvn br.com.softplan.security.zap:zap-maven-plugin:analyze
